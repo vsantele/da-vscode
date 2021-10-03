@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "DA",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.da",
+				"match": "\\b(if|else|do|while|until|times|and|or|is|not|than|est|non|module|enddo|endif)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.da",
+			"begin": "\"|'",
+			"end": "\"|'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.da",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.da"
+}

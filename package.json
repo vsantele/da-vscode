@@ -1,0 +1,54 @@
+{
+  "name": "da",
+	"displayName": "da",
+	"description": "Diagramme d'actions",
+	"version": "0.0.1",
+	"publisher": "vsantele",
+	"engines": {
+		"vscode": "^1.54.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onLanguage:plantuml",
+		"onCommand:da.create"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "da.create",
+				"title": "DA: Create Diagram"
+			}
+		],
+		"languages": [{
+			"id": "da",
+			"aliases": ["DA", "da"],
+			"extensions": [".da"],
+			"configuration": "./language-configuration.json"
+		}],
+		"grammars": [{
+				"language": "da",
+				"scopeName": "source.da",
+				"path": "./syntaxes/da.tmLanguage.json"
+		}]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "yarn run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.54.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0"
+	}
+
+}
